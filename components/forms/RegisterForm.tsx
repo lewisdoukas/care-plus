@@ -30,9 +30,6 @@ const RegisterForm = ({ user }: { user: User }) => {
   const form = useForm<z.infer<typeof PatientFormValidation>>({
     resolver: zodResolver(PatientFormValidation),
     defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
       ...PatientFormDefaultValues,
     },
   });
@@ -63,6 +60,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         identificationDocument: formData,
       };
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       const patient = await registerPatient(patientData);
 
