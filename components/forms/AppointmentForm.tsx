@@ -54,8 +54,6 @@ const AppointmentForm = ({
   async function onSubmit(values: z.infer<typeof AppointmentFormValidation>) {
     setIsLoading(true);
 
-    console.log("HERE", { type });
-
     let status;
 
     switch (type) {

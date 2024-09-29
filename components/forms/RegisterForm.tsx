@@ -31,6 +31,9 @@ const RegisterForm = ({ user }: { user: User }) => {
     resolver: zodResolver(PatientFormValidation),
     defaultValues: {
       ...PatientFormDefaultValues,
+      name: user ? user.name : "",
+      email: user ? user.email : "",
+      phone: user ? user.phone : "",
     },
   });
 
